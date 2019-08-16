@@ -7,20 +7,13 @@ import { getData } from '../actions';
 
 const SmurfList = props => {
     console.log('props from SmurfList', props)
-    const [data, setData] = useState([]);
     useEffect(() => {
-        axios
-        .get('http://localhost:3333/smurfs')
-        .then(res => {
-          setData(res.data);
-          console.log('data from useEffect:', res.data)
-        })
-        .catch(err => console.log(err.response));
-      }, []);
+      props.getData()
+    }, [])
   return (
     <div>
         <h1>Smurf Data:</h1>
-        {data.map(n => {
+        {props.smurfs.map(n => {
             return(
                 <>
                 <p>Smurf Name: {n.name}</p>
@@ -29,8 +22,7 @@ const SmurfList = props => {
                 </>
             ) 
         })}
-     
-      </div>
+    </div>
   )
 }
 

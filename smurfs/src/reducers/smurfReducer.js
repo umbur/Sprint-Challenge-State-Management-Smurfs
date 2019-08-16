@@ -22,7 +22,7 @@ import {
         return {
           ...state,
          //isLoading: false,
-          dogapi: action.payload,
+          smurfs: action.payload,
           error: ''
         };
       default:
