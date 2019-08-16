@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 
 import { getData } from '../actions';
 
-//import Smurf from './Smurf';
-
 const SmurfList = props => {
     console.log('props from SmurfList', props)
     const [data, setData] = useState([]);
@@ -25,12 +23,13 @@ const SmurfList = props => {
         {data.map(n => {
             return(
                 <>
-                <p>Name: {n.name}</p>
-                <p>Age: {n.age}</p>
-                 <p>Height: {n.height}</p>
+                <p>Smurf Name: {n.name}</p>
+                <p>Smurf Age: {n.age}</p>
+                <p>Smurf Height: {n.height}</p>
                 </>
             ) 
         })}
+     
       </div>
   )
 }
